@@ -47,3 +47,8 @@ then you may pass your token into the other endpoints for authentication.
 # r = requests.get('http://127.0.0.1:8000/api/getPlaces', headers={"Authorization": f"Token {os.getenv('TOKEN')}"})
 # res = json.loads(r.content)
 # print(res)
+
+"""get group places"""
+r = requests.get('http://127.0.0.1:8000/api/group/get/places', headers={"Authorization": f"Token {os.getenv('TOKEN')}"})
+res = json.loads(r.content)
+print(res)

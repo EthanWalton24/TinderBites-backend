@@ -62,6 +62,9 @@ class GetPlaces(APIView):
         resp = requests.get(url, headers=YELP_HEADERS)
         businesses = json.loads(resp.content)['businesses']
 
+        group.places = json.dumps(businesses)
+        group.save()
+
         return Response(businesses)
     
 
@@ -98,6 +101,25 @@ class UpdateAddressView(UpdateAPIView):
                 return Response(response)
 
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+
+class GetGroupPlaces(APIView):
+    """
+    View to list all nearby places.
+
+    * Requires token authentication.
+    * Only authenticated users are able to access this view.
+    """
+    authentication_classes = [authentication.TokenAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, format=None):
+        """
+        Return a list of nearby places.
+        """
+        group = Person.objects.get(user=request.user).group
+
+        return Response(group.places)
 
 
 
