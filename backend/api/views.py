@@ -61,6 +61,9 @@ class GetPlaces(APIView):
         url = f'https://api.yelp.com/v3/businesses/search?term=food&location={group.address}&limit={group.limit}&radius={radius}&open_now=true'
         resp = requests.get(url, headers=YELP_HEADERS)
         businesses = json.loads(resp.content)['businesses']
+        businesses = [{k: v for k, v in d.items() if k in ['name', 'image_url', 'rating', 'location', 'distance', 'is_closed']} for d in businesses]
+        for d in businesses:
+            d['location'] = d['location']['address1']
 
         group.places = json.dumps(businesses)
         group.save()

@@ -10,12 +10,13 @@ class UpdateAddressSerializer(serializers.Serializer):
 
 class CreateUserSerializer(serializers.ModelSerializer):
     username = serializers.CharField()
+    email = serializers.CharField()
     password = serializers.CharField(write_only=True,
                                      style={'input_type': 'password'})
 
     class Meta:
         model = get_user_model()
-        fields = ('username', 'password', 'first_name', 'last_name')
+        fields = ('username', 'email', 'password', 'first_name', 'last_name')
         write_only_fields = ('password')
         read_only_fields = ('is_staff', 'is_superuser', 'is_active',)
 
