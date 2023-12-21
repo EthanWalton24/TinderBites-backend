@@ -58,17 +58,46 @@ class GetPlaces(APIView):
         group = Person.objects.get(user=request.user).group
         radius = int(group.radius * Decimal(1609.34)) #convert radius from miles to meters
 
-        url = f'https://api.yelp.com/v3/businesses/search?term=food&location={group.address}&limit={group.limit}&radius={radius}&open_now=true'
-        resp = requests.get(url, headers=YELP_HEADERS)
-        businesses = json.loads(resp.content)['businesses']
-        businesses = [{k: v for k, v in d.items() if k in ['name', 'image_url', 'rating', 'location', 'distance', 'is_closed']} for d in businesses]
-        for d in businesses:
-            d['location'] = d['location']['address1']
+        # url = f'https://api.yelp.com/v3/businesses/search?term=food&location={group.address}&limit={group.limit}&radius={radius}&open_now=true'
+        # resp = requests.get(url, headers=YELP_HEADERS)
+        # businesses = json.loads(resp.content)['businesses']
 
-        group.places = json.dumps(businesses)
+        # out_data = []
+        # for business in businesses:
+        #     url = f"https://api.yelp.com/v3/businesses/{business['id']}"
+        #     resp = requests.get(url, headers=YELP_HEADERS)
+        #     details = json.loads(resp.content)
+        #     details['distance'] = business['distance']
+        #     out_data.append(details)
+
+        headers = {
+            'Content-Type': 'application/json',
+            "X-Goog-Api-Key": os.getenv('GOOGLE_API_KEY'),
+            "X-Goog-FieldMask": "places.id,places.displayName,places.location,places.googleMapsUri,places.rating,places.userRatingCount," \
+            "places.internationalPhoneNumber,places.priceLevel,places.regularOpeningHours,places.reviews,places.photos,places.editorialSummary"
+        }
+
+        data = json.dumps({
+            "includedTypes": ["restaurant"],
+            "maxResultCount": 20,
+            "locationRestriction": {
+                "circle": {
+                "center": {
+                    "latitude": os.getenv('LAT'),
+                    "longitude": os.getenv('LONG')},
+                "radius": 16093.4
+                }
+            }
+        })
+
+        r = requests.post('https://places.googleapis.com/v1/places:searchNearby', data=data, headers=headers)
+        data = json.loads(r.content)['places']
+
+
+        group.places = json.dumps(data)
         group.save()
 
-        return Response(businesses)
+        return Response(data)
     
 
 

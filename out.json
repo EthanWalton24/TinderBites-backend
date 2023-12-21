@@ -1,0 +1,325 @@
+{
+    "places": [
+        {
+            "id": "ChIJJQleBAkjR4YRUq0FGa5Jckk",
+            "internationalPhoneNumber": "+1 936-300-5253",
+            "location": {
+                "latitude": 30.359129699999997,
+                "longitude": -95.58786289999999
+            },
+            "rating": 4.4,
+            "googleMapsUri": "https://maps.google.com/?cid=5292373524206693714",
+            "regularOpeningHours": {
+                "openNow": false,
+                "periods": [
+                    {
+                        "open": {
+                            "day": 0,
+                            "hour": 10,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 0,
+                            "hour": 22,
+                            "minute": 0
+                        }
+                    },
+                    {
+                        "open": {
+                            "day": 2,
+                            "hour": 11,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 2,
+                            "hour": 22,
+                            "minute": 0
+                        }
+                    },
+                    {
+                        "open": {
+                            "day": 3,
+                            "hour": 11,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 3,
+                            "hour": 22,
+                            "minute": 0
+                        }
+                    },
+                    {
+                        "open": {
+                            "day": 4,
+                            "hour": 11,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 4,
+                            "hour": 22,
+                            "minute": 0
+                        }
+                    },
+                    {
+                        "open": {
+                            "day": 5,
+                            "hour": 11,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 5,
+                            "hour": 23,
+                            "minute": 0
+                        }
+                    },
+                    {
+                        "open": {
+                            "day": 6,
+                            "hour": 10,
+                            "minute": 0
+                        },
+                        "close": {
+                            "day": 6,
+                            "hour": 23,
+                            "minute": 0
+                        }
+                    }
+                ],
+                "weekdayDescriptions": [
+                    "Monday: Closed",
+                    "Tuesday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+                    "Wednesday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+                    "Thursday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+                    "Friday: 11:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
+                    "Saturday: 10:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
+                    "Sunday: 10:00\u202fAM\u2009\u2013\u200910:00\u202fPM"
+                ]
+            },
+            "priceLevel": "PRICE_LEVEL_MODERATE",
+            "userRatingCount": 1903,
+            "displayName": {
+                "text": "Conroe Lake House",
+                "languageCode": "en"
+            },
+            "reviews": [
+                {
+                    "name": "places/ChIJJQleBAkjR4YRUq0FGa5Jckk/reviews/ChdDSUhNMG9nS0VJQ0FnSUNKLTRmUXNRRRAB",
+                    "relativePublishTimeDescription": "5 months ago",
+                    "rating": 5,
+                    "text": {
+                        "text": "We attended a 16th Birthday gathering here and it was great! We sat on the patio and it had a great view and a large stage with live entertainment. There is plenty of outdoor seating under the pavilion. Great customer service, although I think we were a little more thirsty than our waitress could keep up with! They are very pet friendly and immediately brought up a water bowl for my puppy when they saw us walk up.\n\nThere is easy access to the beach front and a walk up bar right next to the water. The docks offer easy access as well.\n\nOverall, great experience and beautiful evening!",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "We attended a 16th Birthday gathering here and it was great! We sat on the patio and it had a great view and a large stage with live entertainment. There is plenty of outdoor seating under the pavilion. Great customer service, although I think we were a little more thirsty than our waitress could keep up with! They are very pet friendly and immediately brought up a water bowl for my puppy when they saw us walk up.\n\nThere is easy access to the beach front and a walk up bar right next to the water. The docks offer easy access as well.\n\nOverall, great experience and beautiful evening!",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Bree (Bree)",
+                        "uri": "https://www.google.com/maps/contrib/111676181947882652183/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUESdU4AuukbKCPvYPBbLrJoYKzoyt-fjBc9Mr5PnbC1t3Z=s128-c0x00000000-cc-rp-mo-ba4"
+                    },
+                    "publishTime": "2023-07-06T00:20:12Z"
+                },
+                {
+                    "name": "places/ChIJJQleBAkjR4YRUq0FGa5Jckk/reviews/ChZDSUhNMG9nS0VJQ0FnSUNaOHFpSUhBEAE",
+                    "relativePublishTimeDescription": "3 months ago",
+                    "rating": 5,
+                    "text": {
+                        "text": "Our first time here, food was delicious, we had the Hangover burger, Mac Daddy Burger and the brisket potato with make and cheese. Also 2 kids meals. Our waitress would disappear for long periods of time, we just assumed she was super busy inside. My husband went to the bar a few times to get refills. We sat outside even though it was hot, because our kiddos wanted to swim in the Lake and we wanted to be near them. There is a small beach access area. Very kid friendly, lots of outdoor games and also a playground. Dog friendly as well,  they have a small dog park \ud83d\ude00",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "Our first time here, food was delicious, we had the Hangover burger, Mac Daddy Burger and the brisket potato with make and cheese. Also 2 kids meals. Our waitress would disappear for long periods of time, we just assumed she was super busy inside. My husband went to the bar a few times to get refills. We sat outside even though it was hot, because our kiddos wanted to swim in the Lake and we wanted to be near them. There is a small beach access area. Very kid friendly, lots of outdoor games and also a playground. Dog friendly as well,  they have a small dog park \ud83d\ude00",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Sabrina G",
+                        "uri": "https://www.google.com/maps/contrib/106629554826885490870/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVql7kvfBrz85NP847YANTaOw5cEVYHFhaQPfSUGcNTrdKu=s128-c0x00000000-cc-rp-mo-ba3"
+                    },
+                    "publishTime": "2023-09-07T19:34:07Z"
+                },
+                {
+                    "name": "places/ChIJJQleBAkjR4YRUq0FGa5Jckk/reviews/ChdDSUhNMG9nS0VJQ0FnSUNsNlotTXV3RRAB",
+                    "relativePublishTimeDescription": "4 weeks ago",
+                    "rating": 5,
+                    "text": {
+                        "text": "We went for a late snack and ordered appetizers. We ate outside with live music. It was wonderful! Beautiful view! Food was great! We ordered the Brisket Nachos and their famous mozzarella sticks. They definitely lived up to their name. Oh my goodness! They were huge and amazing!!\n\nOur server, Brittney was excellent!\n\nWe'll definitely be back!!",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "We went for a late snack and ordered appetizers. We ate outside with live music. It was wonderful! Beautiful view! Food was great! We ordered the Brisket Nachos and their famous mozzarella sticks. They definitely lived up to their name. Oh my goodness! They were huge and amazing!!\n\nOur server, Brittney was excellent!\n\nWe'll definitely be back!!",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Beth Boneta",
+                        "uri": "https://www.google.com/maps/contrib/112464919115108276527/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUP_lQ6P8cYpJMXNkWbos8Bp-DosHrXI5PWhnPNhbzSGeU=s128-c0x00000000-cc-rp-mo"
+                    },
+                    "publishTime": "2023-11-21T20:25:43Z"
+                },
+                {
+                    "name": "places/ChIJJQleBAkjR4YRUq0FGa5Jckk/reviews/ChZDSUhNMG9nS0VJQ0FnSUR4aWYyYmNREAE",
+                    "relativePublishTimeDescription": "6 months ago",
+                    "rating": 5,
+                    "text": {
+                        "text": "First time here and really enjoyed it!! We got an awesome table right on the lakefront with beautiful views.\n\nWe started off with the mozzarella sticks, and they are, hands-down, the best mozzarella sticks I have ever had. Crunchy breading, gooey cheese, and a very good marinara for dipping.\n\nMy wife had the Southwest Salad, and I had the Mac Daddy burger. Everything tasted great!\n\nMaddie H was our server, she was super kind, friendly, and attentive. My drink never ran out, and that\u2019s a huge plus in my book!!\n\nCome enjoy the food, the views, and make sure you sit in Maddie\u2019s section!!",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "First time here and really enjoyed it!! We got an awesome table right on the lakefront with beautiful views.\n\nWe started off with the mozzarella sticks, and they are, hands-down, the best mozzarella sticks I have ever had. Crunchy breading, gooey cheese, and a very good marinara for dipping.\n\nMy wife had the Southwest Salad, and I had the Mac Daddy burger. Everything tasted great!\n\nMaddie H was our server, she was super kind, friendly, and attentive. My drink never ran out, and that\u2019s a huge plus in my book!!\n\nCome enjoy the food, the views, and make sure you sit in Maddie\u2019s section!!",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Matt Harris",
+                        "uri": "https://www.google.com/maps/contrib/116054924537789760000/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVYuXU6DFSz6CO1hwDAAcIItOYHULEc5HtLD9Ye5AScnHo=s128-c0x00000000-cc-rp-mo"
+                    },
+                    "publishTime": "2023-06-10T19:24:53Z"
+                },
+                {
+                    "name": "places/ChIJJQleBAkjR4YRUq0FGa5Jckk/reviews/ChZDSUhNMG9nS0VJQ0FnSUNwbG9DRmZBEAE",
+                    "relativePublishTimeDescription": "4 months ago",
+                    "rating": 5,
+                    "text": {
+                        "text": "We absolutely love Conroe Lake House - food is good but the location is amazing.   We love to sit outside near the water and watch the action on the lake.  Our new favorite venue.   Service is good but not great.  They not slow or rude, they just a little unfriendly is possibly the best way to describe the service.  That will certainly not stop us going there.  The brisket",
+                        "languageCode": "en"
+                    },
+                    "originalText": {
+                        "text": "We absolutely love Conroe Lake House - food is good but the location is amazing.   We love to sit outside near the water and watch the action on the lake.  Our new favorite venue.   Service is good but not great.  They not slow or rude, they just a little unfriendly is possibly the best way to describe the service.  That will certainly not stop us going there.  The brisket",
+                        "languageCode": "en"
+                    },
+                    "authorAttribution": {
+                        "displayName": "Gary Godfrey",
+                        "uri": "https://www.google.com/maps/contrib/101792842334820038459/reviews",
+                        "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLzrq95BI2XD7plasKukNW3_g0XRkMx0XEfFjp4iwQh=s128-c0x00000000-cc-rp-mo-ba2"
+                    },
+                    "publishTime": "2023-08-03T03:11:54Z"
+                }
+            ],
+            "photos": [
+                {
+                    "name": "places/ChIJJQleBAkjR4YRUq0FGa5Jckk/photos/AWU5eFiUFDzxJ5mD0zBD8ww6mcg3HBnlv14gfwat_74R2A7yd_GpeYm4i4b1VchQ1J2T-TE1hkJ11LWDdNoAJdvS1OfYmrLwdR3e62sLT4uRKvcw32AL1mcpWcHyavGJ1iKRfAIadYJTzMWy-dFj8yMiFCEh1ZFBckY6rSGs",
+                    "widthPx": 4032,
+                    "heightPx": 3024,
+                    "authorAttributions": [
+                        {
+                            "displayName": "Charles Kirkland",
+                            "uri": "//maps.google.com/maps/contrib/101205054959888780081",
+                            "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjV8GsyGZWJcb3NThDTY_uuasvhAaZjHa-d6yevSqai0h0E=s100-p-k-no-mo"
+                        }
+                    ]
+                },
+                {
+                    "name": "places/ChIJJQleBAkjR4YRUq0FGa5Jckk/photos/AWU5eFgASop3d6GC-LBQDaAmgVSW2ekCUEEx2gSfbyr8XUc8Ooc8SS7KRJ_H9v7tYh70bGl-ysUsYxdSvEhd2vBBwfMNQCsvJj0UcTzV29D7CyG_CzJP7vXmeobe6exrToAXVjkrgLbTUWx5tXCw4yNpyM8fIyXNdpZe6le9",
+                    "widthPx": 4000,
+                    "heightPx": 3000,
+                    "authorAttributions": [
+                        {
+                            "displayName": "Jonathan Rascoe",
+                            "uri": "//maps.google.com/maps/contrib/100731349324804650648",
+                            "photoUri": "//lh3.googleusercontent.com/a/ACg8ocJayn_NNI_VbPedGyOLYA4WYZwe1vl7ObZoDUYN2gK-=s100-p-k-no-mo"
+                        }
+                    ]
+                },
+                {
+                    "name": "places/ChIJJQleBAkjR4YRUq0FGa5Jckk/photos/AWU5eFi9vdiJ5BtPN1XNsWONpvrljoPSZLqBLGBL1c3rmkkqc0m2ZGKl6VmVdYChk4CtCw9K14IvR16L92fvEdOyPL8rcKko5dFbEgpeB0_RBg4PB_4QvRb7vTqIbOFQ0Hl0A19sM2MliP93ppChpfIG6PWNJanVdBCefrnJ",
+                    "widthPx": 3000,
+                    "heightPx": 4000,
+                    "authorAttributions": [
+                        {
+                            "displayName": "David Marquez",
+                            "uri": "//maps.google.com/maps/contrib/109387929739635076660",
+                            "photoUri": "//lh3.googleusercontent.com/a/ACg8ocI_fQmpZIjRRsF0UvG9qZgGYZ8HfqWRGOF9sTzNKQQu=s100-p-k-no-mo"
+                        }
+                    ]
+                },
+                {
+                    "name": "places/ChIJJQleBAkjR4YRUq0FGa5Jckk/photos/AWU5eFj87G_88wSn2SeYyAVsH-eIEZOf-A6ulwzO5CaZwu65LdgJugYC4tu3-vOhJ3Q2ffZ6AiwsJvT5r1r01JILk__RGLiaWa8tCC6weXrXOW6IPgD8L0PhvABsjRsaRa4x3BNu1BrUcJf77V50AfB_YDpBJFYEFN9d6klA",
+                    "widthPx": 4032,
+                    "heightPx": 2268,
+                    "authorAttributions": [
+                        {
+                            "displayName": "Geoff",
+                            "uri": "//maps.google.com/maps/contrib/114022117605830585482",
+                            "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjVG9B37z2xx9Om_Z2y0SnREvMOxbsIzK51QzIZjhhBcgzNz=s100-p-k-no-mo"
+                        }
+                    ]
+                },
+                {
+                    "name": "places/ChIJJQleBAkjR4YRUq0FGa5Jckk/photos/AWU5eFjfsWM1XDGiCNyVi1Ym5-yeopuelGtBBDAN3hnvC76xWB78B5r_EewSpzfXIaLgw7jwq3DBasCLcGwMiIUm0oP-FUA6pZ_pRy64u1BzBmBTdbJGVrD_cBp29ugGn8HT01O3tEemXONUsxafQXDboDlyqyhWCYnWooyn",
+                    "widthPx": 4032,
+                    "heightPx": 3024,
+                    "authorAttributions": [
+                        {
+                            "displayName": "Matt Harris",
+                            "uri": "//maps.google.com/maps/contrib/116054924537789760000",
+                            "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjVYuXU6DFSz6CO1hwDAAcIItOYHULEc5HtLD9Ye5AScnHo=s100-p-k-no-mo"
+                        }
+                    ]
+                },
+                {
+                    "name": "places/ChIJJQleBAkjR4YRUq0FGa5Jckk/photos/AWU5eFj5cazfnKEz1raAaX_cLHXJb738VWN-GHe_8_0h7U0zf0nlPB80S5Yi_ww8zNbBn32p6T2FaRx3AST6BN54dUjJBdhF1j2Ixshku87UYR94B5c0FQvtLuJfFNE7CkYzsOtE78UU9M53jb6qvl6wC7jZy1oUSOpvpMQV",
+                    "widthPx": 3024,
+                    "heightPx": 4032,
+                    "authorAttributions": [
+                        {
+                            "displayName": "Linda A. Adams",
+                            "uri": "//maps.google.com/maps/contrib/109677290076897463060",
+                            "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjWnNF78F-xHWST2ZPuwDbZIU03u5Rn8Z4pu8i2k3Xi1w58=s100-p-k-no-mo"
+                        }
+                    ]
+                },
+                {
+                    "name": "places/ChIJJQleBAkjR4YRUq0FGa5Jckk/photos/AWU5eFgzi_LqIjWEVTmj1ZTaP3m1wur4xA6RKv9WtKgftJ1soS-qg9Ro9pv3JIu4W8Nhs9CZuNJ5tTrzP5bVhT2Gn4W2cOmnkmPBKiPdereFdOwGuIFT-BGPPe7bFFYC6Ix_gGfr_d87_6HWTNyDmEJTRn2-9B5rDmAzq_41",
+                    "widthPx": 3876,
+                    "heightPx": 3006,
+                    "authorAttributions": [
+                        {
+                            "displayName": "Evelia Galindo",
+                            "uri": "//maps.google.com/maps/contrib/102180550604576324354",
+                            "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjUgqoo0k0xLFBlHgHyMsYXTPdCHM05LdcoZgZUawvd3VPs=s100-p-k-no-mo"
+                        }
+                    ]
+                },
+                {
+                    "name": "places/ChIJJQleBAkjR4YRUq0FGa5Jckk/photos/AWU5eFgw1XIObRM36yWvBIu-oNw56HfhCUIpNlwAMW_Xq38cdgQKXjPNgnO6XBvNNgliztTggZtPcR-fP8qepLzlEZ2iAxV6pgw8bk5M9w2POSBxUtcmzWzwqoV1mCx-ClxRWEy4dm-WOF9_VOgK014P_YNcn0Oqs3iaHTNm",
+                    "widthPx": 6016,
+                    "heightPx": 4512,
+                    "authorAttributions": [
+                        {
+                            "displayName": "Roland Martinez",
+                            "uri": "//maps.google.com/maps/contrib/113650952255195833459",
+                            "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjURe3n8Ow-cPG3J5cWYPwnv7Yu3kp6L4eZBgNLtVGuOyRsl=s100-p-k-no-mo"
+                        }
+                    ]
+                },
+                {
+                    "name": "places/ChIJJQleBAkjR4YRUq0FGa5Jckk/photos/AWU5eFjl_9LmDDLKFyVAgEfmVZiz1LFI-jOcFOFiUO7gpjbqcNleQZbuHJGOYDc1cxORnQxovSLKnTTfoSI-g8PZD96LC2H3T5PjDHvJqn5cQKsfLhJw9ltwMLIZ2VfaQM10SX-BKp36Sdd6F-RfdOGCBu8C9-JwBAXa2X1Q",
+                    "widthPx": 12000,
+                    "heightPx": 9000,
+                    "authorAttributions": [
+                        {
+                            "displayName": "Jason",
+                            "uri": "//maps.google.com/maps/contrib/117691822613459237184",
+                            "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjVvGWZ2_GMOiV8L47jrWEFNOxMzcbxMFHkkYOHZyOxCN0Du=s100-p-k-no-mo"
+                        }
+                    ]
+                },
+                {
+                    "name": "places/ChIJJQleBAkjR4YRUq0FGa5Jckk/photos/AWU5eFjxjEXbPWh0n9jlGKhK_Q1n70-MyQ9zZMVG_lUl1TKPe9LzsL5YUq96paLGm9LYWUh5ujeRFu-wZSFeKj8cdQy4pA8ULtz0zbUD5qlcF2nFWCktyqJXDE7aMB5cybQgn444BMhfQczzCez8voq_KyTR7HGczLWFonIY",
+                    "widthPx": 4032,
+                    "heightPx": 3024,
+                    "authorAttributions": [
+                        {
+                            "displayName": "Ricardo Aguayo",
+                            "uri": "//maps.google.com/maps/contrib/115366380685470590339",
+                            "photoUri": "//lh3.googleusercontent.com/a-/ALV-UjXs6qp2yYXvGSOO07WyK-Xt8_MjdRMtf6e1iNzkXfDSOg=s100-p-k-no-mo"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
