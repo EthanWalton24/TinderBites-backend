@@ -7,8 +7,9 @@ from django.dispatch import receiver
 class Group(models.Model):
     admin = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
     name = models.CharField(max_length=16, blank=True, null=True, default='Group')
-    address = models.TextField(max_length=500, blank=True, null=True)
-    radius = models.DecimalField(max_digits=7, decimal_places=2) #in miles (0-24.85) meter=miles*1609.34
+    latitude = models.FloatField(blank=True, null=True)
+    longitude = models.FloatField(blank=True, null=True)
+    radius = models.DecimalField(max_digits=7, decimal_places=2, default=10) #in miles (0-31) meter=miles*1609.34
     limit = models.SmallIntegerField(default=50) #0-50
     places = models.JSONField(default=list, blank=True, null=True)
     swipes = models.JSONField(default=dict, blank=True, null=True)
@@ -17,6 +18,11 @@ class Group(models.Model):
 class Person(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
     group = models.ForeignKey(Group, on_delete=models.CASCADE, blank=True, null=True)
+    latitude = models.FloatField(blank=True, null=True)
+    longitude = models.FloatField(blank=True, null=True)
+    radius = models.DecimalField(max_digits=7, decimal_places=2, default=10) #in miles (0-31) meter=miles*1609.34
+    places = models.JSONField(default=list, blank=True, null=True)
+    swipes = models.JSONField(default=dict, blank=True, null=True)
 
 
 

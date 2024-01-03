@@ -55,26 +55,16 @@ class GetPlaces(APIView):
         """
         Return a list of nearby places.
         """
-        group = Person.objects.get(user=request.user).group
-        radius = int(group.radius * Decimal(1609.34)) #convert radius from miles to meters
 
-        # url = f'https://api.yelp.com/v3/businesses/search?term=food&location={group.address}&limit={group.limit}&radius={radius}&open_now=true'
-        # resp = requests.get(url, headers=YELP_HEADERS)
-        # businesses = json.loads(resp.content)['businesses']
-
-        # out_data = []
-        # for business in businesses:
-        #     url = f"https://api.yelp.com/v3/businesses/{business['id']}"
-        #     resp = requests.get(url, headers=YELP_HEADERS)
-        #     details = json.loads(resp.content)
-        #     details['distance'] = business['distance']
-        #     out_data.append(details)
+        obj = Person.objects.get(user=request.user)
+        obj = obj.group if request.GET['type'] == 'group' else obj
+        radius = int(obj.radius * Decimal(1609.34)) #convert radius from miles to meters
 
         headers = {
             'Content-Type': 'application/json',
             "X-Goog-Api-Key": os.getenv('GOOGLE_API_KEY'),
             "X-Goog-FieldMask": "places.id,places.displayName,places.location,places.googleMapsUri,places.rating,places.userRatingCount," \
-            "places.internationalPhoneNumber,places.priceLevel,places.regularOpeningHours,places.reviews,places.photos,places.editorialSummary"
+            "places.internationalPhoneNumber,places.priceLevel,places.regularOpeningHours,places.currentOpeningHours,places.reviews,places.photos,places.editorialSummary"
         }
 
         data = json.dumps({
@@ -83,9 +73,9 @@ class GetPlaces(APIView):
             "locationRestriction": {
                 "circle": {
                 "center": {
-                    "latitude": os.getenv('LAT'),
-                    "longitude": os.getenv('LONG')},
-                "radius": 16093.4
+                    "latitude": obj.latitude,
+                    "longitude": obj.longitude},
+                "radius": radius
                 }
             }
         })
@@ -94,8 +84,8 @@ class GetPlaces(APIView):
         data = json.loads(r.content)['places']
 
 
-        group.places = json.dumps(data)
-        group.save()
+        obj.places = json.dumps(data)
+        obj.save()
 
         return Response(data)
     
@@ -149,9 +139,11 @@ class GetGroupPlaces(APIView):
         """
         Return a list of nearby places.
         """
-        group = Person.objects.get(user=request.user).group
 
-        return Response(group.places)
+        obj = Person.objects.get(user=request.user)
+        obj = obj.group if request.GET['type'] == 'group' else obj
+
+        return Response(obj.places)
 
 
 
