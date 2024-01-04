@@ -55,39 +55,43 @@ class GetPlaces(APIView):
         """
         Return a list of nearby places.
         """
-
+        #get person/group calling api
         obj = Person.objects.get(user=request.user)
         obj = obj.group if request.GET['type'] == 'group' else obj
+
+        #api parameters
         radius = int(obj.radius * Decimal(1609.34)) #convert radius from miles to meters
+        category = 13065 #restaurants
+        limit = 1
+        fields = [
+            'fsq_id',
+            'name',
+            'location',
+            'distance',
+            'description',
+            'tel',
+            'hours',
+            'rating',
+            'price',
+            'menu',
+            'photos'
+        ]
 
+        #create and send api request
+        url = f"https://api.foursquare.com/v3/places/search?ll={obj.latitude}%2C{obj.longitude}&radius={radius}&categories={category}&limit={limit}&fields={','.join(fields)}"
         headers = {
-            'Content-Type': 'application/json',
-            "X-Goog-Api-Key": os.getenv('GOOGLE_API_KEY'),
-            "X-Goog-FieldMask": "places.id,places.displayName,places.location,places.googleMapsUri,places.rating,places.userRatingCount," \
-            "places.internationalPhoneNumber,places.priceLevel,places.regularOpeningHours,places.currentOpeningHours,places.reviews,places.photos,places.editorialSummary"
+            "accept": "application/json", 
+            "Authorization": os.getenv('FOURSQUARE_API_KEY')
         }
+        req = requests.get(url, headers=headers)
+        res = json.loads(req.content)['results']
+        
+        #save the places data in group if called by a group
+        if request.GET['type'] == 'group':
+            obj.places = json.dumps(res)
+            obj.save()
 
-        data = json.dumps({
-            "includedTypes": ["restaurant"],
-            "maxResultCount": 20,
-            "locationRestriction": {
-                "circle": {
-                "center": {
-                    "latitude": obj.latitude,
-                    "longitude": obj.longitude},
-                "radius": radius
-                }
-            }
-        })
-
-        r = requests.post('https://places.googleapis.com/v1/places:searchNearby', data=data, headers=headers)
-        data = json.loads(r.content)['places']
-
-
-        obj.places = json.dumps(data)
-        obj.save()
-
-        return Response(data)
+        return Response(res)
     
 
 
