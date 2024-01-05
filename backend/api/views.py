@@ -62,11 +62,12 @@ class GetPlaces(APIView):
         #api parameters
         radius = int(obj.radius * Decimal(1609.34)) #convert radius from miles to meters
         category = 13065 #restaurants
-        limit = 1
+        limit = 50
         fields = [
             'fsq_id',
             'name',
             'location',
+            'geocodes',
             'distance',
             'description',
             'tel',
@@ -74,24 +75,32 @@ class GetPlaces(APIView):
             'rating',
             'price',
             'menu',
+            'tips',
             'photos'
         ]
 
         #create and send api request
-        url = f"https://api.foursquare.com/v3/places/search?ll={obj.latitude}%2C{obj.longitude}&radius={radius}&categories={category}&limit={limit}&fields={','.join(fields)}"
+        url = f"https://api.foursquare.com/v3/places/search?ll={obj.latitude}%2C{obj.longitude}&radius={radius}&categories={category}&limit={limit}&fields={','.join(fields)}&sort=DISTANCE"
         headers = {
             "accept": "application/json", 
             "Authorization": os.getenv('FOURSQUARE_API_KEY')
         }
         req = requests.get(url, headers=headers)
         res = json.loads(req.content)['results']
+
+        #remove duplicate restaurants (multiple McDonald's etc.) and remove places without photos or ratings
+        data = []
+        for place in res:
+            if not any([place['name'] == d['name'] for d in data]):
+                if len(place['photos']) > 0 and 'rating' in place:
+                    data.append(place)
         
         #save the places data in group if called by a group
         if request.GET['type'] == 'group':
-            obj.places = json.dumps(res)
+            obj.places = json.dumps(data)
             obj.save()
 
-        return Response(res)
+        return Response(data)
     
 
 
