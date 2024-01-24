@@ -3,9 +3,9 @@ from .models import *
 from rest_framework import serializers
 
 
-class UpdateAddressSerializer(serializers.Serializer):
-    model = Group
-    address = serializers.CharField()
+# class UpdateAddressSerializer(serializers.Serializer):
+#     model = Group
+#     address = serializers.CharField()
 
 
 class CreateUserSerializer(serializers.ModelSerializer):

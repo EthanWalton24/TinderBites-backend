@@ -14,12 +14,6 @@ from decimal import Decimal
 load_dotenv()
 
 
-YELP_API_KEY = os.getenv('YELP_API_KEY')
-YELP_HEADERS = {'Authorization': f"Bearer {YELP_API_KEY}"}
-
-
-
-
 
 """ api endpoints """
 class ListUsers(APIView):
@@ -57,7 +51,14 @@ class GetPlaces(APIView):
         """
         #get person/group calling api
         obj = Person.objects.get(user=request.user)
-        obj = obj.group if request.GET['type'] == 'group' else obj
+        # obj = obj.group if request.GET['type'] == 'group' else obj
+
+        if obj.use_address:
+            latitude = obj.latitude
+            longitude = obj.longitude
+        else:
+            latitude = request.GET['latitude']
+            longitude = request.GET['longitude']
 
         #api parameters
         radius = int(obj.radius * Decimal(1609.34)) #convert radius from miles to meters
@@ -80,7 +81,7 @@ class GetPlaces(APIView):
         ]
 
         #create and send api request
-        url = f"https://api.foursquare.com/v3/places/search?ll={obj.latitude}%2C{obj.longitude}&radius={radius}&categories={category}&limit={limit}&fields={','.join(fields)}&sort=DISTANCE"
+        url = f"https://api.foursquare.com/v3/places/search?ll={latitude}%2C{longitude}&radius={radius}&categories={category}&limit={limit}&fields={','.join(fields)}&sort=DISTANCE"
         headers = {
             "accept": "application/json", 
             "Authorization": os.getenv('FOURSQUARE_API_KEY')
@@ -103,44 +104,9 @@ class GetPlaces(APIView):
         return Response(data)
     
 
-
-
-""" group endpoints """
-class UpdateAddressView(UpdateAPIView):
-        """
-        An endpoint for changing address.
-        """
-        serializer_class = UpdateAddressSerializer
-        model = Group
-        permission_classes = [permissions.IsAuthenticated]
-
-        def get_object(self, queryset=None):
-            obj = Person.objects.get(user=self.request.user).group
-            return obj
-
-        def update(self, request, *args, **kwargs):
-            self.object = self.get_object()
-            serializer = self.get_serializer(data=request.data)
-
-            if serializer.is_valid():
-                # set_password also hashes the password that the user will get
-                self.object.address = serializer.data.get("address")
-                self.object.save()
-                response = {
-                    'status': 'success',
-                    'code': status.HTTP_200_OK,
-                    'message': 'address updated successfully',
-                    'data': []
-                }
-
-                return Response(response)
-
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        
-
-class GetGroupPlaces(APIView):
+class Settings(APIView):
     """
-    View to list all nearby places.
+    View to get all users settings.
 
     * Requires token authentication.
     * Only authenticated users are able to access this view.
@@ -150,13 +116,93 @@ class GetGroupPlaces(APIView):
 
     def get(self, request, format=None):
         """
-        Return a list of nearby places.
+        Return users settings.
         """
-
+        #get person/group calling api
         obj = Person.objects.get(user=request.user)
-        obj = obj.group if request.GET['type'] == 'group' else obj
+        # obj = obj.group if request.GET['type'] == 'group' else obj
 
-        return Response(obj.places)
+        data = {
+            'longitude': obj.longitude,
+            'latitude': obj.latitude,
+            'address': obj.address,
+            'radius': obj.radius,
+            'use_address': obj.use_address
+        }
+
+        return Response(data)
+    
+
+    def post(self, request, format=None):
+        """
+        Set users settings
+        """
+        obj = Person.objects.get(user=request.user)
+        # obj = obj.group if request.GET['type'] == 'group' else obj
+
+        try:
+            d = json.loads(request.body)
+
+            obj.address = d['address']
+            obj.latitude = d['latitude']
+            obj.longitude = d['longitude']
+            obj.radius = d['radius']
+            obj.use_address = d['use_address']
+            obj.save()
+
+            return Response({'status': 'ok'})
+
+        except:
+            return Response({'status': 'error'})
+        
+
+
+class Profile(APIView):
+    """
+    View to get users profile.
+
+    * Requires token authentication.
+    * Only authenticated users are able to access this view.
+    """
+    authentication_classes = [authentication.TokenAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, format=None):
+        """
+        Return users settings.
+        """
+        #get person/group calling api
+        obj = Person.objects.get(user=request.user)
+        # obj = obj.group if request.GET['type'] == 'group' else obj
+
+        data = {
+            'username': obj.user.username,
+            'name': obj.user.first_name,
+            'email': obj.user.email,
+        }
+
+        return Response(data)
+    
+
+    def post(self, request, format=None):
+        """
+        Set users settings
+        """
+        obj = Person.objects.get(user=request.user)
+        # obj = obj.group if request.GET['type'] == 'group' else obj
+
+        try:
+            d = json.loads(request.body)
+
+            obj.user.username = d['username']
+            obj.user.first_name = d['name']
+            obj.user.email = d['email']
+            obj.user.save()
+
+            return Response({'status': 'ok'})
+
+        except:
+            return Response({'status': 'error'})
 
 
 
